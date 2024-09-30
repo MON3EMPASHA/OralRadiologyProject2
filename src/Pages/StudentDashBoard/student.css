@@ -1,0 +1,214 @@
+:root {
+  --mainBackGround: #f5fbf9;
+  --mainColor: #0082e6;
+  --secondText: #65b4f1;
+  --textColor: var(--mainColor);
+  --headerColor: #0082e6;
+  --text-monem: rgb(20, 19, 19);
+  --btnB: #2450f1;
+  --btnB-hover: #14319b;
+  --sidebar-expanded-margin: 200px;
+  --sidebar-default-margin: 70px;
+  --mainText: black;
+  --secondaryText: #777;
+  --chartBack: rgba(255, 255, 255, 0.277);
+  --currentday: #a2d1fd;
+  --profile: #a2d1fd;
+  --shadow: rgba(0, 0, 0, 0.256);
+}
+
+[theme="Dark"] {
+  --mainColor: #4d8ba8;
+  --mainBackGround: #1b343c;
+  --secondText: #65b4f1;
+  --textColor: #96bdcf;
+  --headerColor: #4d8ba8;
+  --text-monem: rgb(230, 230, 230);
+  --btnB: #4d8ba8;
+  --btnB-hover: #356981;
+  --mainText: white;
+  --secondaryText: #a9a9a9;
+  --currentday: #699eff;
+  --profile: #4d8ba8;
+  --shadow: rgba(255, 255, 255, 0.256);
+}
+
+.fullPage {
+  padding-top: 16px;
+  width: 80%;
+  margin: auto;
+}
+.fullPage .container.AssignmentSection {
+  width: 60%;
+}
+.fullPage .container.AssignmentSection .sectionTitle {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 16px 0 8px;
+  color: var(--mainText);
+}
+.fullPage .container.AssignmentSection .AssCard {
+  box-shadow: 0px 5px 6px 2px var(--shadow);
+  margin-top: 24px;
+  margin-bottom: 7px;
+  margin-right: 3px;
+  margin-left: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #345ff0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.fullPage .container.AssignmentSection .AssCard .info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.fullPage .container.AssignmentSection .AssCard .info .name {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: var(--mainText);
+}
+.fullPage .container.AssignmentSection .AssCard .info .Details {
+  color: var(--secondaryText);
+}
+.fullPage .container.AssignmentSection .AssCard .grade {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--secondaryText);
+}
+.fullPage .container.AssignmentSection .AssCard .state {
+  padding: 16px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.fullPage .BBBBBB {
+  display: flex;
+  flex-direction: column;
+}
+
+.fullPage .BBBBBB .filterOptions .Filteroption {
+  margin-right: 10px;
+  margin-left: 5px;
+  cursor: pointer;
+  color: #979797;
+  font-weight: 700;
+  font-size: 14px;
+}
+.fullPage .BBBBBB .filterOptions .selected {
+  font-weight: bolder;
+  color: var(--text-monem);
+}
+.AssignmentSection .BBBBBB .FilterandSorting {
+  display: flex;
+  width: 120%;
+}
+.AssignmentSection .BBBBBB .FilterandSorting .filterOptions {
+  margin-right: 10px;
+}
+.FilterandSorting .sortingOption {
+  margin-right: 10px;
+  cursor: pointer;
+}
+.FilterandSorting .sortingOptions .selected {
+  color: blue;
+}
+.FilterandSorting .sortingOptions {
+  margin-left: 10px;
+}
+
+.fullPage .container.AssignmentSection h5 {
+  color: #7b7b7b;
+  margin-left: 430px;
+}
+.fullPage .cardAssignment {
+  margin-bottom: 24px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+@media screen and (max-width: 850px) {
+  .fullPage .cardAssignment {
+    width: 170%;
+  }
+}
+.cardAssignment::-webkit-scrollbar {
+  display: none;
+}
+.fullPage .container.AssignmentSection .seal:hover {
+  cursor: pointer;
+  color: #9b9b9b;
+}
+.fullPage .cc1 {
+  float: left;
+  width: 60%;
+  margin-right: -100px;
+  margin-top: 40px;
+}
+.fullPage .Calender {
+  float: right;
+  margin-top: 50px;
+  box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.45);
+
+  background-color: var(--currentday);
+  h2 {
+    text-align: center;
+  }
+  .react-calendar {
+    background-color: rgb(255, 255, 255);
+    border: rgba(128, 0, 0, 0);
+  }
+  @media screen and (max-width: 850px) {
+    .react-calendar {
+      width: 100%;
+      border: rgba(128, 0, 0, 0);
+    }
+  }
+  .react-calendar__tile--now {
+    background-color: var(--currentday);
+  }
+}
+.fullPage .upper {
+  display: flex;
+  justify-content: space-between;
+  /* margin-bottom: 40px; */
+}
+.fullPage .userProfile {
+  padding: 32px 16px;
+}
+.fullPage .userProfile p {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 850px) {
+  .fullPage .upper {
+    display: flex;
+    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+
+  .fullPage .cc1 {
+    width: 100%;
+    height: auto;
+  }
+  .fullPage .Calender {
+    margin-right: 6px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

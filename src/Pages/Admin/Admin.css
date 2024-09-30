@@ -1,0 +1,59 @@
+.MainPage {
+  background-color: var(--mainBackGround);
+}
+.MainPage .AdminBody {
+  background-color: var(--mainBackGround);
+}
+.MainPage .AdminWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .MainPage .AdminWrapper {
+    flex-direction: column;
+    align-self: center;
+  }
+}
+.MainPage .Charts {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 1%;
+}
+.MainPage .Charts .stats-row {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 60%;
+  gap: 20px;
+}
+.MainPage .Charts .chart-row {
+  width: 50%;
+  height: 100%;
+  margin: auto;
+  margin-left: 10%;
+  background-color: white;
+}
+.MainPage {
+  position: relative;
+}
+.MainPage .AdminBody {
+  background-color: var(--mainBackGround);
+}
+.MainPage .AdminSection {
+  padding: 10px 1%;
+  transition: all 0.5s;
+}
+@media (max-width: 768px) {
+  .MainPage .AdminWrapper {
+    width: 100%;
+  }
+  .MainPage .AdminWrapper .mail-form {
+    padding-left: 0px;
+    margin-left: -160px;
+    width: 55%;
+  }
+}
+/*# sourceMappingURL=Admin.css.map */

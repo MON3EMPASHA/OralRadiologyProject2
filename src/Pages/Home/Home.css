@@ -1,0 +1,260 @@
+/* Global Styles */
+html {
+  font-family: "Arial", sans-serif;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary-color: hsl(218, 70%, 18%);
+  --secondary-color: hsl(225, 68%, 53%);
+}
+:root {
+  --mainBackGround: #f5fbf9;
+  --mainColor: #0082e6;
+  --secondText: #65b4f1;
+  --textColor: var(--mainColor);
+  --headerColor: #0082e6;
+  --text-monem: rgb(20, 19, 19);
+  --btnB: #266bf5c1;
+  --btnB-hover: #266bf5;
+  --sidebar-expanded-margin: 200px;
+  --sidebar-default-margin: 70px;
+  --mainText: black;
+  --secondaryText: #777;
+  --chartBack: rgba(255, 255, 255, 0.277);
+  --currentDay: #a2d1fd;
+  --profile: #a2d1fd;
+  --shadow: rgba(0, 0, 0, 0.256);
+}
+[theme="Dark"] {
+  --mainColor: #4d8ba8;
+  --mainBackGround: #1b343c;
+  --secondText: #65b4f1;
+  --textColor: #96bdcf;
+  --headerColor: #4d8ba8;
+  --text-monem: rgb(230, 230, 230);
+  --btnB: #4d8ba8;
+  --btnB-hover: #356981;
+  --mainText: white;
+  --secondaryText: #a9a9a9;
+  --currentDay: #ffd269;
+  --profile: #4d8ba8;
+  --shadow: rgba(255, 255, 255, 0.256);
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: hsl(0, 0%, 47%);
+  font-size: 1.6rem;
+  /* background-color: rgb(255, 255, 255); */
+}
+.HomePage {
+  background-color: var(--mainBackGround);
+}
+/* HomePage Layout */
+.HomePage .parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.HomePage .hero-title {
+  font-size: 5rem;
+  color: var(--text-monem);
+  margin-bottom: 1rem;
+}
+
+.HomePage .img1 {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 2rem;
+}
+
+/* Video Section */
+.HomePage .bg-image {
+  background-color: var(--btnB);
+  padding: 2rem 0;
+}
+
+.HomePage .video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Human Section */
+.HomePage .Human {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.HomePage .doctor-content {
+  max-width: 50%;
+}
+
+.HomePage .doctor-content .section-subtitle {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+.HomePage .doctor-content .section-title {
+  font-size: 2rem;
+}
+
+/* Buttons */
+.HomePage .btn {
+  display: inline-block;
+  background-image: linear-gradient(
+    90deg,
+    hsl(201, 92%, 47%) 0%,
+    hsl(225, 68%, 53%) 100%
+  );
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  border-radius: 4px;
+  margin-top: 2rem;
+  text-align: center;
+}
+/* Scrollable  Gallery */
+
+.HomePage .scroll-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: scroll;
+  padding: 1rem;
+  scroll-snap-type: x mandatory; /* Snap to each image */
+  scroll-padding: 1rem;
+  margin-bottom: 6rem;
+  background-color: var(--btnB);
+  width: 100%;
+}
+.HomePage .scroll-container::-webkit-scrollbar {
+  display: none;
+}
+.HomePage .scroll-container img {
+  width: 100%;
+  max-width: 300px;
+  min-width: 230px;
+  object-fit: cover;
+  max-height: 160px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  scroll-snap-align: center;
+}
+
+.HomePage .scroll-container img:hover {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+.HomePage .scroll-container p {
+  /* margin-left: 2%;
+  display: none; */
+}
+/* Responsive Layouts */
+/* For Large Screens - Show 4 Images */
+@media (min-width: 1200px) {
+  .HomePage .scroll-container {
+  }
+}
+
+/* For Medium Screens - Show 3 Images */
+@media (max-width: 768px) {
+  .HomePage .scroll-container img {
+    max-width: 250px; /* Adjust image size */
+  }
+}
+
+/* For Small Screens - Show 2 Images */
+@media (max-width: 576px) {
+  .HomePage .scroll-container img {
+    max-width: 150px; /* Adjust image size for smaller screens */
+  }
+}
+
+/* Footer */
+.HomePage footer {
+  margin-top: 5rem;
+}
+
+/* Media Queries */
+/* Large Screen Adjustments */
+@media (min-width: 1200px) {
+  .HomePage .img2 {
+    max-width: 400px; /* Larger image for large screens */
+  }
+}
+
+@media (max-width: 1200px) {
+  .HomePage .hero-title {
+    font-size: 4rem;
+  }
+
+  .HomePage .doctor-content {
+    max-width: 60%;
+  }
+}
+
+/* Medium Screen Adjustments */
+@media (max-width: 768px) {
+  .HomePage .Human {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .HomePage .doctor-content {
+    max-width: 100%;
+  }
+
+  .HomePage .img1 {
+    max-width: 300px;
+  }
+
+  .HomePage .video {
+    width: 90%;
+  }
+
+  .HomePage .scroll-container img {
+    max-width: 250px;
+  }
+
+  .HomePage .img2 {
+    max-width: 250px; /* Smaller image for medium screens */
+  }
+}
+
+/* Small Screen Adjustments */
+@media (max-width: 576px) {
+  .HomePage .hero-title {
+    font-size: 3rem;
+  }
+
+  .HomePage .doctor-content .section-subtitle {
+    font-size: 1.6rem;
+  }
+
+  .HomePage .btn {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.6rem;
+  }
+
+  .HomePage .img2 {
+    max-width: 200px; /* Smaller image for small screens */
+  }
+}
+
+/* Specific Adjustments for OralRadiologyInfoSection */
+.HomePage .img2 {
+  width: 100%;
+  max-width: 300px; /* Default reduced size */
+  height: auto;
+  margin: 0 auto;
+}
