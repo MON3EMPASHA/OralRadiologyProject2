@@ -12,6 +12,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 export default function Home() {
   return (
     <div className="HomePage">
+      MOn3em
       <WelcomeSection />
       <VideoSection />
       <OralRadiologyInfoSection />

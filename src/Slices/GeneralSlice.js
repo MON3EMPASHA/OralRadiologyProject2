@@ -1,7 +1,7 @@
 import { axiosMethods } from "../Pages/Controller";
 
 const methods = new axiosMethods();
-export const serverURL = "http://oralradiologymsa.rf.gd/OralRadiology/";
+export const serverURL = "http://oralradiologymsa.rf.gd/";
 
 export function userLogin(data) {
   return methods.post(serverURL + "userLogic.php/Login", data);
