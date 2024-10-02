@@ -60,3 +60,7 @@ export function sendMailAPI(toName, fromName, message, toEmail) {
     "p5suXG8zm4KIy7q0l"
   );
 }
+
+export function getAllUsersTypes() {
+  return methods.get(serverURL + "userLogic.php/UsersTypes");
+}

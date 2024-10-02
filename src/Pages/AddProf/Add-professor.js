@@ -1,16 +1,14 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./AddProf.css";
 import { Navigate } from "react-router-dom";
-import { insertByMSAId } from "../../Slices/AdminSlice";
+import { getAllUsersTypes, insertByMSAId } from "../../Slices/AdminSlice";
 import toast from "react-hot-toast";
-import { getSession } from "../Controller";
+import { getSession, validArray } from "../Controller";
 
 export default function AddUser() {
   const [finalData, setFinalData] = useState({ Type: "Student" });
+  const [Types, setTypes] = useState([]);
   const inputField = useRef();
-
-  if (getSession("Type") !== "Admin") return <Navigate to="/" />;
-  
 
   function handleInputChange(name) {
     setFinalData((prev) => ({
@@ -18,6 +16,11 @@ export default function AddUser() {
       [name]: document.getElementById(name).value,
     }));
   }
+  useEffect(() => {
+    getAllUsersTypes().then((res) => {
+      if (validArray(res.msg)) setTypes(res.msg);
+    });
+  }, []);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -37,6 +40,7 @@ export default function AddUser() {
     }
     setFinalData((prev) => ({ ...prev, MSAId: "" }));
   }
+  if (getSession("Type") !== "Admin") return <Navigate to="/" />;
 
   return (
     <div className="container-add-prof">
@@ -63,9 +67,14 @@ export default function AddUser() {
               onChange={() => handleInputChange("Type")}
               value={finalData.Type}
             >
-              <option value="Student">Student</option>
-              <option value="Professor">Professor</option>
-              <option value="Admin">Admin</option>
+              {validArray(Types) &&
+                Types.map((type) => {
+                  return (
+                    <option key={type.Id} value={type.Name}>
+                      {type.Name}
+                    </option>
+                  );
+                })}
             </select>
           </div>
         </div>
