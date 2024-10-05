@@ -7,19 +7,21 @@ export const serverURL = "https://oralradiologymsa.rf.gd/";
 export function userLogin(data) {
   //return methods.post(serverURL + "userLogic.php/Login", data);
 
-  fetch(serverURL + "userLogic.php/Login", {
+  return fetch(serverURL + "userLogic.php/Login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
   })
-    .then((response) => response.json())
+    .then((response) => response.json()) // Parse the JSON response
     .then((data) => {
-      //  console.log(data);
+      // Handle the data if necessary
+      return data; // Return the data for further processing
     })
     .catch((error) => {
-      // console.error("Error:", error);
+      console.error("Error:", error); // Log errors if any
+      throw error; // Rethrow error to be caught in calling function
     });
 }
 export function changesInUserProfile(data) {
