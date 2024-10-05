@@ -16,10 +16,10 @@ export function userLogin(data) {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      //  console.log(data);
     })
     .catch((error) => {
-      console.error("Error:", error);
+      // console.error("Error:", error);
     });
 }
 export function changesInUserProfile(data) {
